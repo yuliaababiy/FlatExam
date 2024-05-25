@@ -4,9 +4,9 @@
 #include "Flat.h"
 #include "FlatTwo.h"
 
-void displayFlat(deque<Flat*>& flat)
+void displayFlat(deque<Flat*>& flats) // changed from flat to flats
 {
-	for (auto flat : flats)
+	for (auto flat : flats) //
 	{
 		flat ->display();
 	}
@@ -30,6 +30,8 @@ int main()
 	cout << "Enter price: ";
 	cin >> price ;
 	cout << "Enter name: ";
+	cin >> name;
+	// added name cin
 	flats.push_back(new Flat(area, room, price, name));
 
 	cout << "Enter area: ";
@@ -46,6 +48,7 @@ int main()
 	cin >> sale;
 	flats.push_back(new FlatTwo(area, room, price, name, numRooms, sale));
 
-	displayFlats(flats);
-	// ??
+	displayFlat(flats); //your functio name is displayFlat not displayFlats
+	// please add input from file and output into file
+	// also add menu
 }

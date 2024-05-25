@@ -19,29 +19,9 @@ double Flat::priceMeter()
 	return price / area;
 }
 
-string Flat::getArea()
+void Flat::addPrice(double newPrice) // changed to double newPrice becase your .h file has double as paramyter
 {
-	return area;
-}
-
-string Flat::getRoom()
-{
-	return room;
-}
-
-string Flat::getPrice()
-{
-	return price;
-}
-
-string Flat::getName()
-{
-	return name;
-}
-
-void Flat::addPrice(int count)
-{
-	price += price;
+	price += newPrice;
 }
 
 double Flat::priceMeter()
@@ -49,7 +29,7 @@ double Flat::priceMeter()
 	return price / area;
 }
 
-string Flat::getPrice()
+double Flat::getPrice() //if u do get functions there must be return type as your variable. In your case price is double so it must be double Flat::getPrice()
 {
 	return price;
 }

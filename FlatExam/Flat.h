@@ -1,5 +1,5 @@
 #pragma once
-#ifdef FLAT_H
+#ifndef FLAT_H // changed to ifndef
 #define FLAT_H
 #include <iostream>
 using namespace std;
@@ -15,11 +15,9 @@ public :
 	virtual void displayIntoFile(ostream& out);
 	virtual void display();
 	double priceMeter();//обчислювати ціну квадратного метра?
-	string getArea, getRoom, getPrice, getName;//повідомляти свої дані?
 	double getPrice();
 
-    void addPrice(double price);
-	//порівняння за площею?
+    void addPrice(double newPrice);
 	
 
 };

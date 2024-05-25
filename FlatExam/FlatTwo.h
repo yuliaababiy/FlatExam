@@ -1,5 +1,5 @@
 #pragma once
-#ifdef FLATTWO
+#ifndef FLATTWO // changed to ifndef
 #define FLATTWO
 #include "Flat.h"
 
@@ -9,11 +9,11 @@ protected:
 	int numRooms;
 	int sale;
 public:
-	FlatTwo(int numRooms, int sale);
+	FlatTwo(double area, int room, double price, string name, int numRooms, int sale); // u have to add properties from Flat class and then from your original class
 	void displayIntoFile(ostream& out) override;
 	void display() override;
 	double calculatePriceMeter();//?
-	void setSale(int sale);
+	void setSale(int newSale);
 
 };
 #endif 
