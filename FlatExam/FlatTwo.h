@@ -1,4 +1,4 @@
-#pragma once
+
 #ifndef FLATTWO // changed to ifndef
 #define FLATTWO
 #include "Flat.h"

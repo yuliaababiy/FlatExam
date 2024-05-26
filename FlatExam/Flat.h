@@ -1,4 +1,4 @@
-#pragma once
+
 #ifndef FLAT_H // changed to ifndef
 #define FLAT_H
 #include <iostream>
@@ -9,7 +9,7 @@ protected:
 	double area;
 	int room;
 	double price;
-	string name;//?
+	string name;
 public :
 	Flat(double area, int room, double price, string name);
 	virtual void displayIntoFile(ostream& out);
