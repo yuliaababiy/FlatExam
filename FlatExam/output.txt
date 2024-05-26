@@ -1,0 +1,3 @@
+Area:50Room: 3Price: 50000Name: Avalon
+Area:60Room: 4Price: 60000Name: HillNumRooms:10Sale:10
+Area:30000Room: 3Price: 0Name: FlatTwo
