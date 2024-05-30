@@ -1,42 +1,44 @@
-#include "FlatTwo.h" // changed to FlatTwo.h
+#include "FlatTwo.h"
 
+template <typename T>
+FlatTwo<T>::FlatTwo(T area, int room, double price, string name, int numRooms, int sale)
+    : Flat<T>(area, room, price, name), numRooms(numRooms), sale(sale) {}
 
-FlatTwo::FlatTwo(double area, int room, double price, string name, int numRooms, int sale)
-	: Flat( area,  room,  price,  name), numRooms(numRooms), sale(sale) {}
-
-
-void FlatTwo::displayIntoFile(ostream& out)
-{
-	out << "Area:" << area << " Room: " << room << " Price: " << price << " Name: " << name <<
-		" NumRooms:" << numRooms << " Sale:" << sale << endl;
+// батьківський клас - має this, дочірній не має this
+template <typename T>
+void FlatTwo<T>::displayIntoFile(ostream& out) {
+    out << "Area: " << this->area << " Room: " << this->room << " Price: " << this->price << " Name: " << this->name
+        << " NumRooms: " << numRooms << " Sale: " << sale << endl;
 }
 
-
-void FlatTwo::display()
-{
-	cout << "Area:" << area << " Room: " << room << " Price: " << price << " Name: " << name <<
-		" NumRooms:" << numRooms << " Sale:" << sale << endl;
+template <typename T>
+void FlatTwo<T>::display() {
+    cout << "Area: " << this->area << " Room: " << this->room << " Price: " << this->price << " Name: " << this->name
+        << " NumRooms: " << numRooms << " Sale: " << sale << endl;
 }
 
-
-void FlatTwo::setSale(int newSale) // changed from FlaTwo to FlatTwo and changed variable name to newSale to avoid disappointment with class variable name 
-{
-	sale = newSale;
+template <typename T>
+void FlatTwo<T>::setSale(int newSale) {
+    sale = newSale;
 }
 
-
-void FlatTwo::saveWithSpaces(ostream& out)
-{
-	out << "FlatTwo " << area << " " << room << " " << price << " " << name << numRooms<<" "<< sale<< endl;
+template <typename T>
+void FlatTwo<T>::saveWithSpaces(ostream& out) {
+    out << "FlatTwo " <<  this->area << " " << this->room << " " << this->price << " " << this->name
+        << " " << numRooms << " " << sale << endl;
 }
 
-double FlatTwo::priceMeter()
-{
-	double percent = price / 100;
-	return price-percent*sale/ area;
+template <typename T>
+double FlatTwo<T>::priceMeter() {
+    double percent = this->price / 100;
+    return (this->price - percent * sale) / this->area;
 }
 
-int FlatTwo::getRooms()
-{
-	return room+numRooms;
+template <typename T>
+int FlatTwo<T>::getRooms() {
+    return this->room + numRooms;
 }
+
+// Explicit template instantiations
+template class FlatTwo<int>;
+template class FlatTwo<double>;
